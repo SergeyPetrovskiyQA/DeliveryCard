@@ -44,7 +44,7 @@ public class DeliveryCard {
         if (!generateData(data,"MM").equals(generateData(dataDelivery, "MM"))){
             $("[data-step='1']").click();
         }
-        $$(".calendar__day").find(exactText(generateData(dataDelivery,"d"))).click();
+        $$(".calendar__day").find(exactText(generateData(dataDelivery,"dd"))).click();
         $("[data-test-id=name] input").setValue("Иванов Иван");
         $("[data-test-id=phone] input").setValue("+79614402259");
         $("[data-test-id=agreement]").click();

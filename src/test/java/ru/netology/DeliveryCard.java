@@ -1,6 +1,8 @@
 package ru.netology;
 
 import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.Configuration;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.Keys;
 
@@ -13,8 +15,14 @@ import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.*;
 
 public class DeliveryCard {
+
     private String generateData(int addDay, String patern) {
         return LocalDate.now().plusDays(addDay).format(DateTimeFormatter.ofPattern(patern));
+    }
+    @BeforeEach
+    void setUp() {
+        Configuration.headless = true;
+        open("http://localhost:9999");
     }
     @Test
     void deliveryTestV1() {

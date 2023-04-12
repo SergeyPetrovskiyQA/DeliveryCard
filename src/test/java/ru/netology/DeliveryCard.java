@@ -19,11 +19,7 @@ public class DeliveryCard {
     private String generateData(int addDay, String patern) {
         return LocalDate.now().plusDays(addDay).format(DateTimeFormatter.ofPattern(patern));
     }
-    @BeforeEach
-    void setUp() {
-        Configuration.headless = true;
-        open("http://localhost:9999");
-    }
+
     @Test
     void deliveryTestV1() {
         open("http://localhost:9999");
